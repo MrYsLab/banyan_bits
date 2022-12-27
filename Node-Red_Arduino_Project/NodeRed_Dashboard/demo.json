@@ -1,0 +1,589 @@
+[
+    {
+        "id": "0ccdb22e779aab4f",
+        "type": "tab",
+        "label": "Dashboard",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "80c4678a0f5f7489",
+        "type": "group",
+        "z": "0ccdb22e779aab4f",
+        "name": "Potientiometer Input",
+        "style": {
+            "label": true,
+            "color": "#000000",
+            "fill": "#addb7b"
+        },
+        "nodes": [
+            "5d36eca3c90b8c53",
+            "aa886fe210f960bd",
+            "9acde417dfc068b3"
+        ],
+        "x": 14,
+        "y": 79,
+        "w": 672,
+        "h": 82
+    },
+    {
+        "id": "952c26e8905b5221",
+        "type": "group",
+        "z": "0ccdb22e779aab4f",
+        "name": "Set Servo Positioin",
+        "style": {
+            "fill": "#ffff00",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "3b3d5f4b3b1f06c2",
+            "d50f434ff8db9e54",
+            "164f4255645a8ab4"
+        ],
+        "x": 14,
+        "y": 199,
+        "w": 512,
+        "h": 142
+    },
+    {
+        "id": "24ea2727d509c310",
+        "type": "group",
+        "z": "0ccdb22e779aab4f",
+        "name": "PWM Output",
+        "style": {
+            "label": true,
+            "color": "#000000",
+            "stroke": "none",
+            "fill": "#ff7f7f"
+        },
+        "nodes": [
+            "791cd4c1428946ba",
+            "0698572ef98d96ed"
+        ],
+        "x": 14,
+        "y": 619,
+        "w": 532,
+        "h": 82
+    },
+    {
+        "id": "daef150fe034c5af",
+        "type": "group",
+        "z": "0ccdb22e779aab4f",
+        "name": "Dashboard Static Strings",
+        "style": {
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "0c7be88270b33969",
+            "8b2eff74fabf7d8c",
+            "7083f6a47230c445"
+        ],
+        "x": 854,
+        "y": 79,
+        "w": 312,
+        "h": 202
+    },
+    {
+        "id": "cc2abdc42db3d40d",
+        "type": "group",
+        "z": "0ccdb22e779aab4f",
+        "name": "LED Digital Outputs",
+        "style": {
+            "fill": "#7fb7df",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "768564bf463091d7",
+            "d52b071b628cf855",
+            "449cd43fc4f4f365",
+            "251181c99c3eb1db",
+            "02f54d10e758c7d1",
+            "4047f6df6878092c"
+        ],
+        "x": 14,
+        "y": 379,
+        "w": 552,
+        "h": 202
+    },
+    {
+        "id": "5d36eca3c90b8c53",
+        "type": "websocket in",
+        "z": "0ccdb22e779aab4f",
+        "g": "80c4678a0f5f7489",
+        "name": "",
+        "server": "",
+        "client": "51e15b4a369fcd18",
+        "x": 140,
+        "y": 120,
+        "wires": [
+            [
+                "aa886fe210f960bd"
+            ]
+        ]
+    },
+    {
+        "id": "aa886fe210f960bd",
+        "type": "change",
+        "z": "0ccdb22e779aab4f",
+        "g": "80c4678a0f5f7489",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.value",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 360,
+        "y": 120,
+        "wires": [
+            [
+                "9acde417dfc068b3"
+            ]
+        ]
+    },
+    {
+        "id": "3b3d5f4b3b1f06c2",
+        "type": "ui_slider",
+        "z": "0ccdb22e779aab4f",
+        "g": "952c26e8905b5221",
+        "name": "Set Servo Posistion",
+        "label": "Servo Position",
+        "tooltip": "",
+        "group": "c877fd6ba716b003",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "all",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": 0,
+        "max": "180",
+        "step": 1,
+        "className": "",
+        "x": 130,
+        "y": 240,
+        "wires": [
+            [
+                "d50f434ff8db9e54",
+                "164f4255645a8ab4"
+            ]
+        ]
+    },
+    {
+        "id": "768564bf463091d7",
+        "type": "ui_switch",
+        "z": "0ccdb22e779aab4f",
+        "g": "cc2abdc42db3d40d",
+        "name": "",
+        "label": "Red",
+        "tooltip": "",
+        "group": "db9c3ec0ee9b42c9",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 90,
+        "y": 420,
+        "wires": [
+            [
+                "251181c99c3eb1db"
+            ]
+        ]
+    },
+    {
+        "id": "d50f434ff8db9e54",
+        "type": "ui_gauge",
+        "z": "0ccdb22e779aab4f",
+        "g": "952c26e8905b5221",
+        "name": "Display Servo Position",
+        "group": "c877fd6ba716b003",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "",
+        "label": "Degrees",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "180",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 380,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "9acde417dfc068b3",
+        "type": "ui_gauge",
+        "z": "0ccdb22e779aab4f",
+        "g": "80c4678a0f5f7489",
+        "name": "Analog Input",
+        "group": "6847a3ec9f5bd3bd",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "",
+        "label": "Reported Value",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "1023",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 590,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "0c7be88270b33969",
+        "type": "ui_text",
+        "z": "0ccdb22e779aab4f",
+        "g": "daef150fe034c5af",
+        "group": "6847a3ec9f5bd3bd",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Manually Adjust Potentiomenter",
+        "format": "{{msg.payload}}",
+        "layout": "row-center",
+        "className": "",
+        "x": 1010,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "d52b071b628cf855",
+        "type": "ui_switch",
+        "z": "0ccdb22e779aab4f",
+        "g": "cc2abdc42db3d40d",
+        "name": "",
+        "label": "Green",
+        "tooltip": "",
+        "group": "db9c3ec0ee9b42c9",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "1",
+        "onvalueType": "num",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "0",
+        "offvalueType": "num",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 90,
+        "y": 480,
+        "wires": [
+            [
+                "4047f6df6878092c"
+            ]
+        ]
+    },
+    {
+        "id": "449cd43fc4f4f365",
+        "type": "ui_switch",
+        "z": "0ccdb22e779aab4f",
+        "g": "cc2abdc42db3d40d",
+        "name": "",
+        "label": "Blue",
+        "tooltip": "",
+        "group": "db9c3ec0ee9b42c9",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 90,
+        "y": 540,
+        "wires": [
+            [
+                "02f54d10e758c7d1"
+            ]
+        ]
+    },
+    {
+        "id": "791cd4c1428946ba",
+        "type": "ui_slider",
+        "z": "0ccdb22e779aab4f",
+        "g": "24ea2727d509c310",
+        "name": "",
+        "label": "Fade White",
+        "tooltip": "",
+        "group": "db9c3ec0ee9b42c9",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "end",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": 0,
+        "max": "255",
+        "step": 1,
+        "className": "",
+        "x": 110,
+        "y": 660,
+        "wires": [
+            [
+                "0698572ef98d96ed"
+            ]
+        ]
+    },
+    {
+        "id": "8b2eff74fabf7d8c",
+        "type": "ui_text",
+        "z": "0ccdb22e779aab4f",
+        "g": "daef150fe034c5af",
+        "group": "db9c3ec0ee9b42c9",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "DIGITAL OUTPUT",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 970,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "7083f6a47230c445",
+        "type": "ui_text",
+        "z": "0ccdb22e779aab4f",
+        "g": "daef150fe034c5af",
+        "group": "db9c3ec0ee9b42c9",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "PWM OUTPUT",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 960,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "224ee58bbdc6e95c",
+        "type": "websocket out",
+        "z": "0ccdb22e779aab4f",
+        "name": "",
+        "server": "",
+        "client": "51e15b4a369fcd18",
+        "x": 970,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "0698572ef98d96ed",
+        "type": "template",
+        "z": "0ccdb22e779aab4f",
+        "g": "24ea2727d509c310",
+        "name": "OneGPIO pwm_write white LED",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{\n    \"command\": \"pwm_write\",\n    \"tag\": \"white\",\n    \"value\": {{payload}}\n}",
+        "output": "json",
+        "x": 390,
+        "y": 660,
+        "wires": [
+            [
+                "224ee58bbdc6e95c"
+            ]
+        ]
+    },
+    {
+        "id": "251181c99c3eb1db",
+        "type": "template",
+        "z": "0ccdb22e779aab4f",
+        "g": "cc2abdc42db3d40d",
+        "name": "OneGPIO digital_write red LED",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{\n    \"command\": \"digital_write\",\n    \"tag\": \"red\",\n    \"value\": {{payload}}\n}",
+        "output": "json",
+        "x": 390,
+        "y": 420,
+        "wires": [
+            [
+                "224ee58bbdc6e95c"
+            ]
+        ]
+    },
+    {
+        "id": "02f54d10e758c7d1",
+        "type": "template",
+        "z": "0ccdb22e779aab4f",
+        "g": "cc2abdc42db3d40d",
+        "name": "OneGPIO digital_write blue LED",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{\n    \"command\": \"digital_write\",\n    \"tag\": \"blue\",\n    \"value\": {{payload}}\n}",
+        "output": "json",
+        "x": 390,
+        "y": 540,
+        "wires": [
+            [
+                "224ee58bbdc6e95c"
+            ]
+        ]
+    },
+    {
+        "id": "4047f6df6878092c",
+        "type": "template",
+        "z": "0ccdb22e779aab4f",
+        "g": "cc2abdc42db3d40d",
+        "name": "OneGPIO digital_write green LED",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{\n    \"command\": \"digital_write\",\n    \"tag\": \"green\",\n    \"value\": {{payload}}\n}",
+        "output": "json",
+        "x": 400,
+        "y": 480,
+        "wires": [
+            [
+                "224ee58bbdc6e95c"
+            ]
+        ]
+    },
+    {
+        "id": "164f4255645a8ab4",
+        "type": "template",
+        "z": "0ccdb22e779aab4f",
+        "g": "952c26e8905b5221",
+        "name": "OneGPIO servo_position",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{\n    \"command\": \"servo_position\",\n    \"tag\": \"servo\",\n    \"position\": {{payload}}\n}",
+        "output": "json",
+        "x": 390,
+        "y": 300,
+        "wires": [
+            [
+                "224ee58bbdc6e95c"
+            ]
+        ]
+    },
+    {
+        "id": "51e15b4a369fcd18",
+        "type": "websocket-client",
+        "path": "ws://localhost:9000",
+        "tls": "",
+        "wholemsg": "true",
+        "hb": "0",
+        "subprotocol": ""
+    },
+    {
+        "id": "c877fd6ba716b003",
+        "type": "ui_group",
+        "name": "Servo Control",
+        "tab": "bd13915c33b62935",
+        "order": 3,
+        "disp": true,
+        "width": 8,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "db9c3ec0ee9b42c9",
+        "type": "ui_group",
+        "name": "LEDs",
+        "tab": "bd13915c33b62935",
+        "order": 2,
+        "disp": true,
+        "width": 8,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "6847a3ec9f5bd3bd",
+        "type": "ui_group",
+        "name": "Analog Input",
+        "tab": "bd13915c33b62935",
+        "order": 1,
+        "disp": true,
+        "width": 8,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "bd13915c33b62935",
+        "type": "ui_tab",
+        "name": "Node-RED - Python Banyan - Telemetrix Demo",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]

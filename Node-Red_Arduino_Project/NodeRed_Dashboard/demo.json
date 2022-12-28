@@ -117,7 +117,7 @@
         "name": "",
         "server": "",
         "client": "51e15b4a369fcd18",
-        "x": 140,
+        "x": 150,
         "y": 120,
         "wires": [
             [
@@ -539,7 +539,7 @@
     {
         "id": "51e15b4a369fcd18",
         "type": "websocket-client",
-        "path": "ws://localhost:9000",
+        "path": "ws://127.0.0.1:9000",
         "tls": "",
         "wholemsg": "true",
         "hb": "0",

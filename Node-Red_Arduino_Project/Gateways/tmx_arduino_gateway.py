@@ -299,7 +299,7 @@ class TmxArduinoGateway(GatewayBaseAIO):
         """
         pin = payload["pin"]
 
-        await self.arduino.set_pin_mode_pwm(pin)
+        await self.set_pin_mode_analog_input(pin)
 
     async def set_mode_servo(self, topic, payload):
         """
